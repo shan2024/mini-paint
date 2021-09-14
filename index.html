@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel = "stylesheet">
+    <script src ="paint.js" defer></script>
+
+</head>
+<body>
+    <h1>Mini-Paint</h1>
+    <div class = "container">
+        <div class ="left">
+            <input type="color" id="colorpicker" onchange="clickColor(0,-1,-1,5)" value ="#00000">
+            <button class = "option">Color mode</button>
+            <button class = "option">Rainbow mode</button>
+            <button class = "option">Eraser</button>
+            <button class = "option">Clear</button>
+            <p>Grid Size: </p>
+            <input type ="range" min="1" max="8" value = "4" class="slider" id="ranger">
+        </div>
+        <div class = "center" id = "grid">
+
+        </div>
+        <div class = "right"></div>
+    </div>
+    <footer>
+        Copyright @ 2021 Seulchan Han
+    </footer>
+</body>
+</html>
