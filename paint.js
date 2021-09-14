@@ -6,7 +6,9 @@
 
 //gridItems
 let center = document.getElementById("grid");
-createGridUnit(4);
+//console.log(performance.now());
+createGridUnit(32);
+//console.log(performance.now());
 
 //slider functionality
 let gridSize = document.querySelector(".left p");
@@ -18,6 +20,13 @@ let colorPicker = document.querySelector("#colorpicker");
 
 let backgroundColor = "black";
 let rainbowMode = false;
+
+
+center.addEventListener('mouseover', e => {
+    if (e.target.className == 'unit') {
+        hoverColor(e.target);
+    }
+})
 
 colorPicker.onclick = function() {
     rainbowMode = false;
@@ -49,45 +58,59 @@ rainbow.onclick = function () {
 
 
 //slider.addEventListener("oninput", updateGrid);
-slider.oninput = function () {
-    console.log(this.value);
-    gridSize.innerHTML = this.value + " x " + this.value;
+slider.onchange = function () {
+    //console.log(this.value);
     createGridUnit(this.value);
 
 
 }
 
+slider.oninput = function () {
+    gridSize.innerHTML = this.value + " x " + this.value;
+}
 function createGridUnit(size) {
+    //console.log(performance.now());
+
     while (center.firstChild) {
         center.removeChild(center.firstChild);
     }
-    let gridInput = "";
-    for (let j = 0; j < size; j++) {
-        gridInput = gridInput + " 1fr";
-    }
-    center.style.gridTemplateColumns = gridInput;
-    center.style.gridTemplateRows = gridInput;
+    //console.log(performance.now());
+
+    center.style.gridTemplateColumns = `repeat( ${size} , 1fr)`;
+    center.style.gridTemplateRows = `repeat( ${size} , 1fr)`;
+
+    //console.log(performance.now());
 
     for (let i = 0; i < Math.pow(size, 2); i++) {
+
+        let length = 500/size;
         let div = document.createElement("div");
+
         div.setAttribute("class", "unit");
-        div.style.width = `${center.offsetWidth / size}px`;
-        div.style.height = div.style.width;
+        //console.log(performance.now());
+        //console.log(500 / size + "px");
+        div.style.width = length + "px";
+        //console.log(performance.now());
+
+        div.style.height = length + "px";
+
         center.appendChild(div);
 
     }
-    let gridItems = Array.from(document.querySelectorAll(".unit"));
+    //console.log(performance.now());
 
-    gridItems.forEach((item) => {
+    //let gridItems = Array.from(document.querySelectorAll(".unit"));
+
+    /*gridItems.forEach((item) => {
 
         item.addEventListener("mouseenter", hoverColor);
-    })
+    })*/
 }
 
 
 
-function hoverColor(e) {
-    let unit = e.target;
+function hoverColor(unit) {
+    //let unit = e.target;
     if (rainbowMode == true) {
         let rand1 = Math.random() * 255;
         let rand2 = Math.random() * 255;
