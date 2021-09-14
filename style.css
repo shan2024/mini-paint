@@ -1,28 +1,37 @@
 .center {
-    background-color: blue;
-    
-    width:30%;
-    height:0;
-    padding-bottom: 30%;
+    background-color: white;
+    width:500px;
+    height:500px;
     display:grid;
     justify-content: stretch;
     align-items: stretch;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4,1fr);
+    border-style:none;
+    -webkit-box-shadow: 0 0 5px 2px grey;
+    -moz-box-shadow: 0 0 5px 2px grey;
+    box-shadow: 0 0 10px 2px grey;
+
 }
 
 body{
     display:flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(235, 235, 229);
     
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
 }
 
 .container {
     width:100%;
     display:flex;
     justify-content: center;
-    gap:20px;
+    gap:40px;
 }
 
 .hovering {
@@ -34,28 +43,68 @@ body{
 }
 
 .left {
+    height:500px;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    width:200px;
 }
 
+.right {
+    width:200px;
+}
 .option {
-    height:100px;
-    width: 100px;
+    height:50px;
+    width: 200px;
+    font-size: 20px;
+    font-family: 'Glory', sans-serif;
+    border-width: 3px;
+    border-radius: 10%;
+    margin: 20px;
+}
+p {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:80%;
 }
 
 #colorpicker {
-    width: 32px;
-    height:32px;
-    background-color:black;
+    height:140px;
+    width: 140px;
+    padding:0;
     border-style: none;
     border-radius: 100%;
+    border-width: 3px;
+    border-color: black;
+    -webkit-box-shadow: 0 0 5px 2px black;
+    -moz-box-shadow: 0 0 5px 2px black;
+    box-shadow: 0 0 5px 2px black;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+  }
+  
+input[type=color]::-webkit-color-swatch-wrapper {
+      border: none;
+      border-radius: 50%;
+      padding: 0;
 }
 
 #ranger {
     -webkit-appearance: none;
     background-color: #d3d3d3;
+    width:100%;
 
 }
 
@@ -73,4 +122,12 @@ body{
     height: 25px;
     background: #04AA6D;
     cursor: pointer;
+  }
+
+  footer {
+      background-color: none;
+      height:5em;
+      display:flex;
+      align-items: center;
+      font-family: Verdana, Helvetica, sans-serif;
   }

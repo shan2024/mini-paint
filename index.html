@@ -7,19 +7,23 @@
     <title>Document</title>
     <link href="style.css" rel = "stylesheet">
     <script src ="paint.js" defer></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Mini-Paint</h1>
     <div class = "container">
         <div class ="left">
-            <input type="color" id="colorpicker" onchange="clickColor(0,-1,-1,5)" value ="#00000">
-            <button class = "option">Color mode</button>
-            <button class = "option">Rainbow mode</button>
-            <button class = "option">Eraser</button>
-            <button class = "option">Clear</button>
-            <p>Grid Size: </p>
-            <input type ="range" min="1" max="8" value = "4" class="slider" id="ranger">
+            <input type="color" id="colorpicker"  value ="#00000">
+            <button class = "option rainbow">Rainbow mode</button>
+            <button class = "option eraser">Eraser</button>
+            <button class = "option clear">Clear</button>
+            <div class = "size">
+                <p>4 x 4</p>
+                <input type ="range" min="1" max="10" value = "4" class="slider" id="ranger">
+            </div>
+            
         </div>
         <div class = "center" id = "grid">
 
@@ -27,7 +31,7 @@
         <div class = "right"></div>
     </div>
     <footer>
-        Copyright @ 2021 Seulchan Han
+        Created By Seulchan Han
     </footer>
 </body>
 </html>
