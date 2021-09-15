@@ -80,13 +80,11 @@ p {
     height:140px;
     width: 140px;
     padding:0;
-    border-style: none;
+    border-style: solid;
     border-radius: 100%;
     border-width: 3px;
     border-color: black;
-    -webkit-box-shadow: 0 0 5px 2px black;
-    -moz-box-shadow: 0 0 5px 2px black;
-    box-shadow: 0 0 5px 2px black;
+    
 }
 
 input[type=color]::-webkit-color-swatch {

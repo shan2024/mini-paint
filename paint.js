@@ -123,11 +123,6 @@ function hoverColor(unit) {
     }
 }
 
-function inProgress() {
-    gridItems.forEach((item) => {
-        item.classList.remove("hovering");
-        item.classList.add("clear");
-    })
-}
+
 
 
